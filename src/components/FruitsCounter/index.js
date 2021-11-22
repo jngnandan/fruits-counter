@@ -27,9 +27,9 @@ class FruitsCounter extends Component {
 
 
         return (
-            <div className="row vh-100 h-100">
+            <div className="row vh-100">
                 <div className="col align-self-center text-center card p-5">
-                    <h1 className="font-weight-bold p-3">Bob ate <span className="text-danger">{mangoNo}</span> mangoes <span className="text-danger">{bananaNo}</span> bananas</h1>
+                    <h1 className="font-weight-bold p-3">Bob ate <span className="text-warning">{mangoNo}</span> mangoes <span className="text-warning">{bananaNo}</span> bananas</h1>
                     <div className="col-12 d-flex flex-row justify-content-center">
                         <div className="col-6 p-3">
                             <img className="m-1 col-8 imgBox" src="https://images.unsplash.com/photo-1602081593819-65e7a8cee0dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="avatar" />
