@@ -1,56 +1,50 @@
 
-import React, { Component } from 'react';
-import '../FruitsCounter/banana.jpeg'
-import '../FruitsCounter/mango.jpeg'
 
+import React, { Component } from 'react'
 
 class FruitsCounter extends Component {
     state = {
-        bananaValue: 0,
-        mangoValue: 0
+        mangoNo: 0,
+        bananaNo: 0
     }
-
-
     render() {
-        const { bananaValue, mangoValue } = this.state
+        const { mangoNo, bananaNo } = this.state
 
-        const clickBanana = () => {
-            this.setState({ bananaValue: bananaValue + 1 })
+        const eatMango = () => {
+            return (
+                this.setState({
+                    mangoNo: mangoNo + 1
+                })
+            )
         }
-
-        const clickMango = () => {
-            this.setState({ mangoValue: mangoValue + 1 })
+        const eatBanana = () => {
+            return (
+                this.setState({
+                    bananaNo: bananaNo + 1
+                })
+            )
         }
 
 
         return (
-            <body>
-                <div className="easyBackground d-flex flex-row justify-content-center" >
-                    <div className="card h-75 w-75 m-5 p-5 ">
-                        <h3>Bobo ate <span>{mangoValue}</span> mangos <span>{bananaValue}</span> Bananas</h3>
-
-                        <div className="d-flex flex-row justify-content-center">
-
-                            <div className="m-4 text-center d-flex flex-column justify-content-center">
-                                <p>Mango</p>
-                                <img src="../src/components/FruitsCounter/banana.jpeg" />
-                                <button onClick={clickMango} className="btn btn-primary">Eat Mangos</button>
-                            </div>
-
-                            <div className="m-4 text-center d-flex flex-column justify-content-center">
-                                <p>Banana</p>
-                                <img src="../FruitsCounter/mango.jpeg" />
-                                <button onClick={clickBanana} className="btn btn-primary">Eat Banana</button>
-                            </div>
-
+            <div className="row vh-100 h-100">
+                <div className="col align-self-center text-center card p-5">
+                    <h1 className="font-weight-bold p-3">Bob ate <span className="text-danger">{mangoNo}</span> mangoes <span className="text-danger">{bananaNo}</span> bananas</h1>
+                    <div className="col-12 d-flex flex-row justify-content-center">
+                        <div className="col-6 p-3">
+                            <img className="m-1 col-8 imgBox" src="https://images.unsplash.com/photo-1602081593819-65e7a8cee0dd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="avatar" />
+                            <button onClick={eatMango} className="col-8 btn btn-primary m-4">Eat Mango</button>
+                        </div>
+                        <div className="col-6 p-3">
+                            <img className="col-6 imgBox" src="https://images.unsplash.com/photo-1587132137056-bfbf0166836e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80" alt="avatar" />
+                            <button onClick={eatBanana} className="col-8 btn btn-primary m-4">Eat Banana</button>
                         </div>
                     </div>
+
                 </div>
-
-            </body>
-
+            </div>
         )
     }
-
 }
+
 export default FruitsCounter
